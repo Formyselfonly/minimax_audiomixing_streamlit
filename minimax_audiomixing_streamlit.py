@@ -17,9 +17,9 @@ if gender=="男":
     speed = 1.0
     vol = 1.0
     group_id = "1689852985712348"
-    api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiLpg5HkuJbmnbAiLCJVc2VyTmFtZSI6IumDkeS4luadsCIsIkFjY291bnQiOiIiLCJTdWJqZWN0SUQiOiIxNzM1MzY1NTkzNjU1MTUyODgzIiwiUGhvbmUiOiIxODc3MjE5ODczNSIsIkdyb3VwSUQiOiIxNzM1MzY1NTkzNjQ2NzY0Mjc1IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoiIiwiQ3JlYXRlVGltZSI6IjIwMjMtMTItMjkgMTQ6MzU6NDgiLCJpc3MiOiJtaW5pbWF4In0.L3zmvrZ_ccqyKjgyib3BNviOyw1FH5Ist-jx2gWO6ftwikatUnxUeCkD73oVXylFestMqcZHr8vWqi4OH4n87Yqkwwoht006I2dwN0eMQc5C4HjI8j8zwBBbb7ODrwTi_pWPDIHHCzabRgOeXoeEzCpbotEhLvO0r2KlyCcTn3DGlDJk5xgceNY7C1lr8o8L1ZjEZxjTGaVbipLUZFL7pYaCraxGRFyli1ZLmGNbeczI1GyhAVp41Pc1ltYtfIx0yM_TzkeEMNtN3znja9VlWIBXhJbSt-LUWfrlcEaOfynmjHGkXPsEAvIUutgc6ng1Y7fjQ7s7RcmFN2AWRRuHrQ"
+    api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidGVzdCIsIlN1YmplY3RJRCI6IjE2ODk4NTI5ODU1OTczOTIiLCJQaG9uZSI6Ik1UVTRNVFU0TURJNU1qUT0iLCJHcm91cElEIjoiMTY4OTg1Mjk4NTcxMjM0OCIsIlBhZ2VOYW1lIjoiIiwiTWFpbCI6InpseWdpbGlhbmFAc2luYS5jb20iLCJDcmVhdGVUaW1lIjoiMjAyMy0wOS0wNSAwMDoyNjo1NSIsImlzcyI6Im1pbmltYXgifQ.gdr3NXX8bAKN9E0bzuVsX5HhGXfHnZRY7YEjzo36_CYXUSDDZ4ZZTTopRJ1SLo9O_bOXJ0pnw2FJHz4kVvOedHbrBXbXHAFwyjWZfZ1kP0iE_n11EEClyIXizUvrh35m1DjPhMiPMYXJpVWy5dIkcD7UHBpZCw3DRk68I8XxdkFkZ3LHmBNqvbH9isTRiCzXUprnk2FwfrU8y38-K-H0mzhzJwxNYCO7SuOr26ZBJGDfPGS8K-X2WCJSYUH6pWwocGBrT10Du4A5qH03Eri0xQ4zs1O08G8tYkp4vWhdcNo7iXMDwGeV-BT5yFup6toAFu7CoU-ge30szOv-6AMsSw"
 
-    text = st.text_area('输入文本', '爱我,别走,如果你说 你不爱我 何不直接了当的说出口 请给我一点温柔')
+    text = st.text_area('输入文本',  "爱像一阵风,吹完它就走,这样的节奏,谁都无可奈何,没有妳以后,我灵魂失控,黑云在降落,我被它拖着走,静静,悄悄,默默,离开,陷入了危险边缘")
     if st.button('文本转语音'):
         url = f"https://api.minimax.chat/v1/text_to_speech?GroupId={group_id}"
         headers = {
@@ -50,15 +50,6 @@ if gender=="男":
                     "voice_id": "male-qn-daxuesheng",
                     "weight": male_qn_daxuesheng
                 },
-                # {
-                #     "voice_id": "presenter_male",
-                #     "weight": presenter_male
-                # },
-                # {
-                #     "voice_id": "audiobook_male_1",
-                #     "weight": audiobook_male_1
-                # },
-
             ]
         }
 
@@ -70,6 +61,7 @@ if gender=="男":
             st.success('Conversion successful!')
             st.balloons()
             st.audio("output.mp3", format='audio/mp3')
+            # st.download_button("下载音频", "output.mp3", key="download_audio")
         else:
             st.error('Failed to convert text to speech.')
 
@@ -121,14 +113,7 @@ elif gender=="女":
                     "voice_id": "female-tianmei",
                     "weight": female_tianmei
                 },
-                # {
-                #     "voice_id": "presenter_female",
-                #     "weight": presenter_female
-                # },
-                # {
-                #     "voice_id": "audiobook_female_1",
-                #     "weight": audiobook_female_1
-                # },
+
             ]
         }
 
@@ -140,10 +125,11 @@ elif gender=="女":
             st.success("转换成功!")
             st.balloons()
             st.audio("output.mp3", format="audio/mp3")
+            # st.download_button("下载音频", "output.mp3", key="download_audio")
         else:
             st.error("出错了,请查看报错信息!")
 
-
+#
 
 else:
     st.write("请选择性别")
