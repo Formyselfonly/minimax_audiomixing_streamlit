@@ -1,5 +1,9 @@
 # readme
 
+## 在线体验网站
+
+https://minimaxaudiomixing.streamlit.app/
+
 ## 功能&使用步骤
 
 1. 输入文本
@@ -12,7 +16,7 @@
 
 3. 点击文本转语音
 
-## 部署步骤
+## 本地部署步骤
 
 ### 第一步
 
